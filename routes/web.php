@@ -69,9 +69,3 @@ Route::middleware('auth')->group(function () {
         Route::delete('/delete-bulk', [TransaksiController::class, 'bulkDestroy'])->name('bulk-destroy');
         Route::delete('/delete/{id}', [TransaksiController::class, 'destroy'])->name('delete');
     });
-
-    Route::prefix('analisis')->name('analisis.')->group(function () {
-        Route::get('/', [AnalisisController::class, 'index'])->name('index');
-    });
-
-});
