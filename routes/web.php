@@ -35,7 +35,7 @@ Route::post('/logout', [LoginController::class, 'destroy'])
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     
-// Profile routes
+    // Profile routes
     Route::get('/profile',        [ProfileController::class, 'index'])->name('profile');
     Route::get('/profile/edit',   [ProfileController::class, 'edit'])->name('profile.edit');
     Route::put('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
@@ -69,3 +69,5 @@ Route::middleware('auth')->group(function () {
         Route::delete('/delete-bulk', [TransaksiController::class, 'bulkDestroy'])->name('bulk-destroy');
         Route::delete('/delete/{id}', [TransaksiController::class, 'destroy'])->name('delete');
     });
+    
+});
